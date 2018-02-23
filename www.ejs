@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Posts</title>
+		<style type="text/css">
+			.post {
+				float:	left;
+				width:	200px;
+				height:	200px;
+				padding:	5px;
+				text-align:	center;
+				overflow:	hidden;
+				border:	solid 1px #ccc;
+			}
+
+				.post.video {
+					background:	#77f;
+				}
+
+			img {
+				max-width:	100%;
+				max-height:	80%;
+			}
+
+			.pagination {
+				clear:	both;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="pagination">
+			<a href="/?page=<%= Number(page) - 1 %>">Previous</a>
+			<a href="/?page=<%= Number(page) + 1 %>">Next</a>
+		</p>
+		<% for (let i = 0; posts[i] !== undefined; i ++) { %>
+			<% const	post	= posts[i]; %>
+
+			<div class="post <%= post.type %>">
+				<p><a href="<%= post.post_url %>">Link</a></p>
+				<% if (post.type === 'photo') { %>
+					<a href="<%= post.img %>"><img src="<%= post.img %>" /></a>
+				<% } else if (post.type === 'video') { %>
+					<%- post.video %>
+				<% } %>
+			</div>
+		<% } %>
+		<p class="pagination">
+			<a href="/?page=<%= Number(page) - 1 %>">Previous</a>
+			<a href="/?page=<%= Number(page) + 1 %>">Next</a>
+		</p>
+	</body>
+</html>

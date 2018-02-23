@@ -1,0 +1,21 @@
+{
+  "name": "tumblr-unique",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "console-info": "0.0.5",
+    "console-warn": "0.0.4",
+    "ejs": "^2.5.7",
+    "larvitbase": "^2.1.1",
+    "moment": "^2.20.1",
+    "request": "^2.83.0",
+    "tumblr.js": "^1.1.1"
+  }
+}
