@@ -41,7 +41,7 @@ function checkBlog(options, cb) {
 
 		if (response.statusCode !== 200) {
 			console.warn('Non-200 statusCode: ' + response.statusCode + ' for URL "' + reqOptions.url + '"');
-			cb();
+			return cb();
 		}
 
 		if ( ! body.response || ! body.response.posts) {
