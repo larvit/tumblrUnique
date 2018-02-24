@@ -1,7 +1,6 @@
 'use strict';
 
-const	newPosts	= require(__dirname + '/database/newPosts.json'),
-	ejs	= require('ejs'),
+const	ejs	= require('ejs'),
 	App	= require('larvitbase'),
 	log	= require('winston'),
 	url	= require('url'),
@@ -22,6 +21,7 @@ new App({
 		function (req, res) {
 			const	template	= fs.readFileSync(__dirname + '/www.ejs').toString(),
 				pageData	= {},
+				newPosts	= JSON.parse(fs.readFileSync(__dirname + '/database/newPosts.json').toString()),
 				page	= qs.parse(url.parse(req.url).query).page || 1;
 
 			pageData.posts	= newPosts.slice((page - 1) * 100, page * 100);
