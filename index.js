@@ -145,6 +145,8 @@ function getWatchedBlogs(cb) {
 		'token_secret':	auth.token_secret
 	});
 
+	console.info('Getting watched blogs');
+
 	function getFollowed(offset, cb) {
 		client.userFollowing({'offset': offset}, function (err, result) {
 			if (err) throw err;
