@@ -16,6 +16,7 @@
     "larvitbase": "^2.1.1",
     "moment": "^2.20.1",
     "request": "^2.83.0",
+    "shuffle-array": "^1.0.1",
     "tumblr.js": "^1.1.1"
   }
 }

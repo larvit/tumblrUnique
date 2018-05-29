@@ -1,6 +1,7 @@
 'use strict';
 
-const	startupTime	= new Date(),
+const	shuffleArray	= require('shuffle-array'),
+	startupTime	= new Date(),
 	database	= {'newPosts': []},
 	request	= require('request'),
 	tumblr	= require('tumblr.js'),
@@ -124,6 +125,8 @@ function checkBlogs(cb) {
 	const	tasks	= [];
 
 	console.info('Checking blogs');
+
+	database.metadata.watchedBlogs	= shuffleArray(database.metadata.watchedBlogs);
 
 	for (let i = 0; database.metadata.watchedBlogs[i] !== undefined; i ++) {
 		const	blogUrl	= database.metadata.watchedBlogs[i];
